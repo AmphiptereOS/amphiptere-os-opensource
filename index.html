@@ -8,93 +8,78 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Inter:wght@600;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-background:#0b0b0e;
-background-image:
-radial-gradient(1200px 600px at -10% -20%, rgba(168,85,247,0.22), transparent 60%),
-radial-gradient(900px 500px at 110% 120%, rgba(250,204,21,0.14), transparent 60%),
-radial-gradient(700px 400px at 50% -10%, rgba(168,85,247,0.10), transparent 70%);
-color:#e8e6e1;font-family:'Inter',system-ui;min-height:100vh
-}
+body{background:#16161a;color:#e6e3de;font-family:'Inter',system-ui}
 .mono{font-family:'JetBrains Mono',monospace}
-.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(20px);background:rgba(11,11,14,.8);border-bottom:1px solid #1d1d22;height:58px;display:flex;justify-content:space-between;align-items:center;padding:0 24px}
-.nav b{font-size:.92rem}
-.nav span{opacity:.4;font-weight:500}
-.hero{max-width:1120px;margin:0 auto;padding:88px 24px 56px}
-.kicker{font-family:'JetBrains Mono';font-size:.66rem;letter-spacing:2.4px;color:#c4b5fd;text-transform:uppercase;margin-bottom:18px}
-.hero h1{font-size:clamp(2.8rem,6vw,4.4rem);line-height:.88;letter-spacing:-1.8px;font-weight:800}
-.hero h1 i{font-style:normal;background:linear-gradient(90deg,#a78bfa 0%,#facc15 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{max-width:520px;margin:22px 0 32px;color:#9a978f;font-size:1.06rem;line-height:1.7}
-.hero p b{color:#fff}
-.btn{display:inline-flex;padding:12px 22px;border-radius:100px;font-weight:700;font-size:.88rem;text-decoration:none}
-.btn-w{background:#fff;color:#111;margin-right:10px}
-.btn-d{background:#1a1a1f;border:1px solid #2a2a32;color:#fff}
+.nav{position:sticky;top:0;z-index:20;background:#16161ae6;backdrop-filter:blur(18px);border-bottom:1px solid #25252c;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.hero{max-width:1100px;margin:0 auto;padding:72px 24px 48px}
+.hero h1{font-size:clamp(2.6rem,6vw,4rem);line-height:.9;letter-spacing:-1.6px;font-weight:800;color:#fff}
+.hero h1 span{color:#a78bfa}
+.hero p{max-width:500px;margin:18px 0 28px;color:#9a978f;font-size:1rem;line-height:1.7}
+.btn{padding:11px 20px;border-radius:100px;font-weight:700;font-size:.86rem;text-decoration:none;display:inline-flex}
+.btn-w{background:#fff;color:#111}
+.btn-d{background:#23232a;border:1px solid #2e2e36;color:#fff;margin-left:8px}
 
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px 48px}
-.tool{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid #23232a;border-radius:28px;overflow:hidden;backdrop-filter:blur(10px);display:grid;grid-template-columns:1.1fr .9fr}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px 48px}
+.tool{background:#1c1c20;border:1px solid #2a2a33;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr}
 @media(max-width:900px){.tool{grid-template-columns:1fr}}
-.tool-l{padding:32px}
-.tool-r{background:#0e0e11;display:flex;align-items:center;justify-content:center;min-height:400px;border-left:1px solid #23232a;overflow:hidden}
-@media(max-width:900px){.tool-r{border-left:0;border-top:1px solid #23232a}}
-.tool-r img{width:100%;height:100%;object-fit:cover}
-.tag{font-family:'JetBrains Mono';font-size:.62rem;padding:5px 10px;border-radius:100px;background:#1c1c20;border:1px solid #2a2a32;color:#9a978f;display:inline-block;margin-right:6px;margin-bottom:10px}
-.code{background:#0a0a0c;border:1px solid #23232a;border-radius:12px;padding:14px;font-family:'JetBrains Mono';font-size:.78rem;color:#c9c5bd;line-height:1.7;margin:14px 0 18px}
-.warn{border:1px dashed #4a3f1e;background:rgba(250,204,21,.06);color:#d8b94a;padding:12px 14px;border-radius:12px;font-family:'JetBrains Mono';font-size:.68rem;line-height:1.6}
+.tool-l{padding:28px}
+.tool-r{background:#111115;min-height:380px;display:flex;align-items:center;justify-content:center;border-left:1px solid #2a2a33}
+@media(max-width:900px){.tool-r{border-left:0;border-top:1px solid #2a2a33;min-height:260px}}
+.tool-r img{width:100%;height:100%;object-fit:cover;display:block}
+.tag{font-family:'JetBrains Mono';font-size:.6rem;padding:5px 10px;border-radius:100px;background:#25252e;border:1px solid #32323e;color:#9a978f;display:inline-block;margin:0 6px 10px 0}
+.code{background:#121215;border:1px solid #2a2a33;border-radius:12px;padding:14px;font-family:'JetBrains Mono';font-size:.76rem;color:#c9c5bd;line-height:1.7;margin:14px 0 18px}
+.warn{border:1px dashed #3e3620;background:#1a1810;color:#c9b458;padding:11px 13px;border-radius:10px;font-family:'JetBrains Mono';font-size:.68rem;line-height:1.6}
 
-.eco{max-width:1120px;margin:0 auto;padding:10px 24px 64px}
-.eco h3{font-size:1.7rem;color:#fff;letter-spacing:-.7px}
-.eco p.sub{color:#8f8c87;font-size:.88rem;margin:8px 0 22px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.eco{max-width:1100px;margin:0 auto;padding:0 24px 60px}
+.eco h3{font-size:1.5rem;color:#fff;letter-spacing:-.6px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid{grid-template-columns:1fr}}
-.card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid #23232a;border-radius:20px;overflow:hidden;text-decoration:none;transition:.2s}
+.card{background:#1c1c20;border:1px solid #2a2a33;border-radius:18px;overflow:hidden;text-decoration:none;display:block;transition:.2s}
 .card:hover{border-color:#a78bfa55;transform:translateY(-2px)}
-.thumb{height:168px;background:#0f0f12;border-bottom:1px solid #23232a;overflow:hidden}
+.thumb{height:156px;background:#15151a;display:flex;align-items:center;justify-content:center;color:#555;font-family:'JetBrains Mono';font-size:.7rem;overflow:hidden;border-bottom:1px solid #2a2a33}
 .thumb img{width:100%;height:100%;object-fit:cover}
-.body{padding:18px}
-.body h4{color:#fff;font-size:.98rem;margin-bottom:6px}
-.body p{color:#8f8c87;font-size:.82rem;line-height:1.5;min-height:36px;margin-bottom:10px}
-.go{font-family:'JetBrains Mono';font-size:.68rem;color:#c4b5fd}
-footer{border-top:1px solid #1d1d22;padding:36px 24px;text-align:center}
+.b{padding:16px}
+.b h4{color:#fff;font-size:.92rem;margin-bottom:4px}
+.b p{color:#8e8b86;font-size:.8rem;line-height:1.45;min-height:34px;margin-bottom:8px}
+.go{font-family:'JetBrains Mono';font-size:.66rem;color:#a78bfa}
+footer{border-top:1px solid #25252c;padding:32px 24px;text-align:center;color:#6f6b66;font-family:'JetBrains Mono';font-size:.7rem;line-height:1.7}
 </style>
 </head>
 <body>
-<div class="nav"><div><b>Amphiptere OS <span>( Open Source )</span></b></div><div class="mono" style="font-size:.6rem;color:#6f6b66;letter-spacing:1px">SYNTHETIC • EDUCATIONAL • INDIVIDUAL PROJECT</div></div>
+<div class="nav"><div style="display:flex;align-items:center;gap:10px"><img src="logo.png" style="width:30px;height:30px;border-radius:7px" onerror="this.style.display='none'"><b>Amphiptere OS <span style="opacity:.4;font-weight:500">(Open Source)</span></b></div><div class="mono" style="font-size:.58rem;color:#6b6762">EDUCATIONAL • SYNTHETIC DATA</div></div>
 
 <div class="hero">
-<div class="kicker">Purple • Gold • Dark Grey • Quality Build</div>
-<h1>Amphiptere OS <i>(Open Source)</i></h1>
-<p><b>Two missions, same name.</b> The Purple Team Linux you know + the open source tools we ship next. No AI animation. No fake effects. Just static, premium, dark tactical tools built for labs.</p>
-<div><a class="btn btn-w" href="https://github.com/AmphiptereOS" target="_blank">GitHub →</a><a class="btn btn-d" href="#tool">View First Tool</a></div>
+<h1>Amphiptere OS<br><span>(Open Source)</span></h1>
+<p>We build lightweight, tactical security tools for labs and demos. Individual project. Not a company.</p>
+<div><a class="btn btn-w" href="https://github.com/AmphiptereOS" target="_blank">GitHub →</a><a class="btn btn-d" href="#tool">First Tool</a></div>
 </div>
 
 <div class="wrap" id="tool">
 <div class="tool">
 <div class="tool-l">
-<div><span class="tag">TOOL 01 / ACTIVE</span><span class="tag">GO • WEB UI</span><span class="tag">SYNTHETIC ONLY</span></div>
-<h2 style="font-size:1.5rem;color:#fff;letter-spacing:-.5px;margin:6px 0 10px">Global Tactical Map — Fake Hacker Setup</h2>
-<p style="color:#9a978f;font-size:.94rem;line-height:1.65;margin-bottom:4px">Lightweight tactical global tracking simulation. Dark hacker-style UI streaming simulated nodes. For demos, labs, aesthetic setups only. No real data.</p>
-<div class="mono" style="font-size:.64rem;letter-spacing:1.4px;color:#c4b5fd;margin-top:18px;margin-bottom:6px">INSTALLATION</div>
+<div><span class="tag">TOOL 01 / ACTIVE</span><span class="tag">GO • WEB UI</span></div>
+<h2 style="color:#fff;font-size:1.35rem;letter-spacing:-.4px;margin:6px 0 8px">Global Tactical Map</h2>
+<p style="color:#9a978f;font-size:.92rem;line-height:1.6;margin-bottom:6px">Fake hacker setup — lightweight tactical map simulation with synthetic nodes. For demos only.</p>
 <div class="code">git clone https://github.com/AmphiptereOS/Amphiptere-OS-Map.git<br><br>go run amphiptere-map.go<br>→ http://localhost:8080</div>
-<div><a class="btn btn-w" href="https://github.com/AmphiptereOS/Amphiptere-OS-Map" target="_blank">Clone</a><a class="btn btn-d" href="https://github.com/AmphiptereOS/Amphiptere-OS-Map" target="_blank" style="margin-left:8px">View Code</a></div>
-<div class="warn" style="margin-top:20px"><b style="color:#facc15">Disclaimer:</b> Educational only. Synthetic data. No real tracking. No liability.</div>
+<div><a class="btn btn-w" href="https://github.com/AmphiptereOS/Amphiptere-OS-Map" target="_blank">Clone</a><a class="btn btn-d" href="https://github.com/AmphiptereOS/Amphiptere-OS-Map" target="_blank">Code</a></div>
+<div class="warn" style="margin-top:18px">Educational only. Synthetic data. No real tracking.</div>
 </div>
-<div class="tool-r"><img src="tactical-map.png" alt="Tactical Map"></div>
+<div class="tool-r"><img src="tactical-map.png" alt="Tactical Map Preview"><span style="display:none">Add tactical-map.png</span></div>
 </div>
 </div>
 
 <div class="eco">
 <h3>Ecosystem</h3>
-<p class="sub">Real webpages — not GitHub 404. Click goes to your actual sites.</p>
 <div class="grid">
-<a class="card" href="https://share.google/djTEkTOZ4fux4dw8N" target="_blank"><div class="thumb"><img src="pic1.png" alt="OS"></div><div class="body"><h4>Purple Team Linux OS</h4><p>Debian 12 XFCE 2.9GB ISO for Purple Team operators.</p><div class="go">Open Website →</div></div></a>
-<a class="card" href="https://share.google/utU97sBmhREbGsJBA" target="_blank"><div class="thumb"><img src="pic2.png" alt="Armory"></div><div class="body"><h4>Amphiptere Armory</h4><p>Acid Cracker, Owl-Auditor, Huntdd-Ghost, Sentinel.</p><div class="go">Open Armory →</div></div></a>
-<a class="card" href="https://share.google/TIwSImI3rpe0krg3T" target="_blank"><div class="thumb"><img src="pic3.png" alt="RULER"></div><div class="body"><h4>RULER — Defense Tool</h4><p>Measure and compare security tools.</p><div class="go">Open RULER →</div></div></a>
-<a class="card" href="https://share.google/HjjzBpWegniQOMtfi" target="_blank"><div class="thumb"><img src="pic4.png" alt="Wallpapers"></div><div class="body"><h4>Wallpapers</h4><p>Official Purple Gold Dark wallpapers.</p><div class="go">Get Wallpapers →</div></div></a>
-<a class="card" href="https://www.youtube.com/@AmphiptereOS" target="_blank"><div class="thumb"><img src="pic5.png" alt="YouTube"></div><div class="body"><h4>YouTube Channel</h4><p>Demos, installs, tactical aesthetics.</p><div class="go">Watch →</div></div></a>
-<a class="card" href="https://github.com/AmphiptereOS" target="_blank"><div class="thumb"><img src="pic6.png" alt="More"></div><div class="body"><h4>More Tools Coming</h4><p>Recon helpers and lab scripts.</p><div class="go">Follow GitHub →</div></div></a>
+<a class="card" href="https://share.google/djTEkTOZ4fux4dw8N" target="_blank"><div class="thumb"><img src="pic1.png" onerror="this.parentElement.textContent='pic1.png'"></div><div class="b"><h4>Amphiptere OS</h4><p>Purple Team Linux — Debian 12 XFCE, 2.9GB ISO.</p><div class="go">Open →</div></div></a>
+<a class="card" href="https://share.google/utU97sBmhREbGsJBA" target="_blank"><div class="thumb"><img src="pic2.png" onerror="this.parentElement.textContent='pic2.png'"></div><div class="b"><h4>Armory</h4><p>Official tools — Cracker, Owl, Ghost, Sentinel.</p><div class="go">Open →</div></div></a>
+<a class="card" href="https://share.google/TIwSImI3rpe0krg3T" target="_blank"><div class="thumb"><img src="pic3.png" onerror="this.parentElement.textContent='pic3.png'"></div><div class="b"><h4>RULER</h4><p>Linux defense tool for security tools.</p><div class="go">Open →</div></div></a>
+<a class="card" href="https://share.google/HjjzBpWegniQOMtfi" target="_blank"><div class="thumb"><img src="pic4.png" onerror="this.parentElement.textContent='pic4.png'"></div><div class="b"><h4>Wallpapers</h4><p>Official dark wallpapers for your lab.</p><div class="go">Open →</div></div></a>
+<a class="card" href="https://youtube.com/@amphiptere-os?si=16IJj6EpKk_xfTzO" target="_blank"><div class="thumb"><img src="pic5.png" onerror="this.parentElement.textContent='pic5.png'"></div><div class="b"><h4>YouTube</h4><p>Demos, installs, tactical builds.</p><div class="go">Watch →</div></div></a>
+<a class="card" href="https://github.com/AmphiptereOS" target="_blank"><div class="thumb"><img src="pic6.png" onerror="this.parentElement.textContent='pic6.png'"></div><div class="b"><h4>Coming Soon</h4><p>More recon and lab tools.</p><div class="go">GitHub →</div></div></a>
 </div>
 </div>
 
-<footer><div class="mono" style="max-width:720px;margin:0 auto;font-size:.7rem;color:#6f6b66;line-height:1.7">© 2026 Amphiptere OS (Open Source) • Individual Project • Not a Company<br>Synthetic data only • Educational • Use at your own responsibility<br><br>amphiptereos@gmail.com</div></footer>
+<footer>© 2026 Amphiptere OS (Open Source) • Individual Project • amphiptereos@gmail.com<br>Synthetic data only • Educational • Use at your own responsibility</footer>
 </body>
 </html>

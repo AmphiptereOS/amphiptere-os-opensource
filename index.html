@@ -8,78 +8,102 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Inter:wght@600;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#16161a;color:#e6e3de;font-family:'Inter',system-ui}
+body{background:#1f1f23;color:#e6e3de;font-family:'Inter',system-ui}
 .mono{font-family:'JetBrains Mono',monospace}
-.nav{position:sticky;top:0;z-index:20;background:#16161ae6;backdrop-filter:blur(18px);border-bottom:1px solid #25252c;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
-.hero{max-width:1100px;margin:0 auto;padding:72px 24px 48px}
-.hero h1{font-size:clamp(2.6rem,6vw,4rem);line-height:.9;letter-spacing:-1.6px;font-weight:800;color:#fff}
-.hero h1 span{color:#a78bfa}
-.hero p{max-width:500px;margin:18px 0 28px;color:#9a978f;font-size:1rem;line-height:1.7}
-.btn{padding:11px 20px;border-radius:100px;font-weight:700;font-size:.86rem;text-decoration:none;display:inline-flex}
+.nav{position:sticky;top:0;z-index:20;background:#1f1f23e6;backdrop-filter:blur(18px);border-bottom:1px solid #2e2e35;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+.hero{max-width:1080px;margin:0 auto;padding:64px 22px 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:48px 20px 32px}}
+.hero h1{font-size:clamp(2.6rem,5.5vw,3.8rem);line-height:.9;letter-spacing:-1.5px;font-weight:800;color:#fff}
+.hero h1 span{color:#b8b5b0}
+.hero p{max-width:460px;margin:16px 0 24px;color:#9a978f;font-size:.98rem;line-height:1.65}
+.btn{padding:11px 20px;border-radius:100px;font-weight:700;font-size:.85rem;text-decoration:none;display:inline-flex}
 .btn-w{background:#fff;color:#111}
-.btn-d{background:#23232a;border:1px solid #2e2e36;color:#fff;margin-left:8px}
+.btn-d{background:#2a2a30;border:1px solid #3a3a44;color:#fff;margin-left:8px}
+.hero-img{background:#25252c;border:1px solid #33333e;border-radius:20px;overflow:hidden;min-height:320px;display:flex;align-items:center;justify-content:center}
+.hero-img img{width:100%;height:100%;object-fit:cover}
 
-.wrap{max-width:1100px;margin:0 auto;padding:0 24px 48px}
-.tool{background:#1c1c20;border:1px solid #2a2a33;border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr}
-@media(max-width:900px){.tool{grid-template-columns:1fr}}
-.tool-l{padding:28px}
-.tool-r{background:#111115;min-height:380px;display:flex;align-items:center;justify-content:center;border-left:1px solid #2a2a33}
-@media(max-width:900px){.tool-r{border-left:0;border-top:1px solid #2a2a33;min-height:260px}}
-.tool-r img{width:100%;height:100%;object-fit:cover;display:block}
-.tag{font-family:'JetBrains Mono';font-size:.6rem;padding:5px 10px;border-radius:100px;background:#25252e;border:1px solid #32323e;color:#9a978f;display:inline-block;margin:0 6px 10px 0}
-.code{background:#121215;border:1px solid #2a2a33;border-radius:12px;padding:14px;font-family:'JetBrains Mono';font-size:.76rem;color:#c9c5bd;line-height:1.7;margin:14px 0 18px}
-.warn{border:1px dashed #3e3620;background:#1a1810;color:#c9b458;padding:11px 13px;border-radius:10px;font-family:'JetBrains Mono';font-size:.68rem;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px 44px}
+.tool{background:#25252c;border:1px solid #343440;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr}
+@media(max-width:860px){.tool{grid-template-columns:1fr}}
+.tool-l{padding:26px}
+.tool-r{background:#1a1a1e;min-height:380px;display:flex;align-items:center;justify-content:center;border-left:1px solid #343440}
+@media(max-width:860px){.tool-r{border-left:0;border-top:1px solid #343440;min-height:240px}}
+.tool-r img{width:100%;height:100%;object-fit:cover}
+.tag{font-family:'JetBrains Mono';font-size:.58rem;padding:5px 9px;border-radius:100px;background:#2e2e38;border:1px solid #3d3d4a;color:#9a978f;margin:0 5px 10px 0;display:inline-block}
+.code{background:#1a1a1e;border:1px solid #343440;border-radius:12px;padding:14px;font-family:'JetBrains Mono';font-size:.76rem;color:#c9c5bd;line-height:1.7;margin:14px 0 16px}
+.warn{border:1px dashed #4a4230;background:#201e14;color:#c9b36a;padding:10px 12px;border-radius:10px;font-family:'JetBrains Mono';font-size:.67rem;line-height:1.6}
 
-.eco{max-width:1100px;margin:0 auto;padding:0 24px 60px}
-.eco h3{font-size:1.5rem;color:#fff;letter-spacing:-.6px;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid{grid-template-columns:1fr}}
-.card{background:#1c1c20;border:1px solid #2a2a33;border-radius:18px;overflow:hidden;text-decoration:none;display:block;transition:.2s}
-.card:hover{border-color:#a78bfa55;transform:translateY(-2px)}
-.thumb{height:156px;background:#15151a;display:flex;align-items:center;justify-content:center;color:#555;font-family:'JetBrains Mono';font-size:.7rem;overflow:hidden;border-bottom:1px solid #2a2a33}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.b{padding:16px}
-.b h4{color:#fff;font-size:.92rem;margin-bottom:4px}
-.b p{color:#8e8b86;font-size:.8rem;line-height:1.45;min-height:34px;margin-bottom:8px}
-.go{font-family:'JetBrains Mono';font-size:.66rem;color:#a78bfa}
-footer{border-top:1px solid #25252c;padding:32px 24px;text-align:center;color:#6f6b66;font-family:'JetBrains Mono';font-size:.7rem;line-height:1.7}
+.eco{max-width:1080px;margin:0 auto;padding:0 22px 56px}
+.eco h3{font-size:1.4rem;color:#fff;margin-bottom:16px;letter-spacing:-.5px}
+.list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){.list{grid-template-columns:1fr}}
+.item{background:#25252c;border:1px solid #343440;border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:center;text-decoration:none;transition:.2s}
+.item:hover{border-color:#4a4a57;transform:translateY(-1px);background:#2a2a33}
+.item-icon{width:40px;height:40px;border-radius:10px;background:#2e2e38;border:1px solid #3d3d4a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.item h4{color:#fff;font-size:.9rem;margin-bottom:2px}
+.item p{color:#8e8b86;font-size:.78rem;line-height:1.4}
+.item .arrow{margin-left:auto;color:#6b6872;font-family:'JetBrains Mono';font-size:.7rem}
+.item-featured{background:#25252c;border:1px solid #3a3a47;grid-column:span 2;display:grid;grid-template-columns:120px 1fr;gap:18px;padding:0;overflow:hidden;align-items:stretch}
+@media(max-width:700px){.item-featured{grid-column:span 1;grid-template-columns:1fr}}
+.item-featured .thumb{height:100%;min-height:110px;background:#1a1a1e;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.item-featured .thumb img{width:100%;height:100%;object-fit:cover}
+.item-featured .info{padding:18px}
+
+footer{border-top:1px solid #2e2e35;padding:30px 22px;text-align:center;color:#6f6b66;font-family:'JetBrains Mono';font-size:.68rem;line-height:1.7;background:#1f1f23}
 </style>
 </head>
 <body>
-<div class="nav"><div style="display:flex;align-items:center;gap:10px"><img src="logo.png" style="width:30px;height:30px;border-radius:7px" onerror="this.style.display='none'"><b>Amphiptere OS <span style="opacity:.4;font-weight:500">(Open Source)</span></b></div><div class="mono" style="font-size:.58rem;color:#6b6762">EDUCATIONAL • SYNTHETIC DATA</div></div>
+
+<div class="nav">
+<div style="display:flex;align-items:center;gap:10px"><img src="logo.png" style="width:30px;height:30px;border-radius:7px;background:#2a2a30" onerror="this.style.display='none'"><b>Amphiptere OS <span style="opacity:.4;font-weight:500">(Open Source)</span></b></div>
+<div class="mono" style="font-size:.58rem;color:#7a7772">DARK SILVER BUILD</div>
+</div>
 
 <div class="hero">
+<div>
 <h1>Amphiptere OS<br><span>(Open Source)</span></h1>
-<p>We build lightweight, tactical security tools for labs and demos. Individual project. Not a company.</p>
+<p>Lightweight tactical security tools for labs and demos. Built by an individual, not a company.</p>
 <div><a class="btn btn-w" href="https://github.com/AmphiptereOS" target="_blank">GitHub →</a><a class="btn btn-d" href="#tool">First Tool</a></div>
+</div>
+<div class="hero-img"><img src="tactical-map.png" alt="Tactical Map" onerror="this.parentElement.innerHTML='<span class=mono style=color:#666;font-size:.7rem>Upload tactical-map.png</span>'"></div>
 </div>
 
 <div class="wrap" id="tool">
 <div class="tool">
 <div class="tool-l">
 <div><span class="tag">TOOL 01 / ACTIVE</span><span class="tag">GO • WEB UI</span></div>
-<h2 style="color:#fff;font-size:1.35rem;letter-spacing:-.4px;margin:6px 0 8px">Global Tactical Map</h2>
-<p style="color:#9a978f;font-size:.92rem;line-height:1.6;margin-bottom:6px">Fake hacker setup — lightweight tactical map simulation with synthetic nodes. For demos only.</p>
+<h2 style="color:#fff;font-size:1.3rem;margin:6px 0 8px">Global Tactical Map</h2>
+<p style="color:#9a978f;font-size:.9rem;line-height:1.6">Fake hacker setup — tactical map simulation with synthetic nodes. For demos, aesthetic labs only.</p>
 <div class="code">git clone https://github.com/AmphiptereOS/Amphiptere-OS-Map.git<br><br>go run amphiptere-map.go<br>→ http://localhost:8080</div>
 <div><a class="btn btn-w" href="https://github.com/AmphiptereOS/Amphiptere-OS-Map" target="_blank">Clone</a><a class="btn btn-d" href="https://github.com/AmphiptereOS/Amphiptere-OS-Map" target="_blank">Code</a></div>
-<div class="warn" style="margin-top:18px">Educational only. Synthetic data. No real tracking.</div>
+<div class="warn" style="margin-top:16px">Educational only. Synthetic data. No real tracking.</div>
 </div>
-<div class="tool-r"><img src="tactical-map.png" alt="Tactical Map Preview"><span style="display:none">Add tactical-map.png</span></div>
+<div class="tool-r"><img src="pic1.png" alt="Map Detail" onerror="this.parentElement.innerHTML='<span class=mono style=color:#666;font-size:.7rem>Upload pic1.png (Tool Preview)</span>'"></div>
 </div>
 </div>
 
 <div class="eco">
 <h3>Ecosystem</h3>
-<div class="grid">
-<a class="card" href="https://share.google/djTEkTOZ4fux4dw8N" target="_blank"><div class="thumb"><img src="pic1.png" onerror="this.parentElement.textContent='pic1.png'"></div><div class="b"><h4>Amphiptere OS</h4><p>Purple Team Linux — Debian 12 XFCE, 2.9GB ISO.</p><div class="go">Open →</div></div></a>
-<a class="card" href="https://share.google/utU97sBmhREbGsJBA" target="_blank"><div class="thumb"><img src="pic2.png" onerror="this.parentElement.textContent='pic2.png'"></div><div class="b"><h4>Armory</h4><p>Official tools — Cracker, Owl, Ghost, Sentinel.</p><div class="go">Open →</div></div></a>
-<a class="card" href="https://share.google/TIwSImI3rpe0krg3T" target="_blank"><div class="thumb"><img src="pic3.png" onerror="this.parentElement.textContent='pic3.png'"></div><div class="b"><h4>RULER</h4><p>Linux defense tool for security tools.</p><div class="go">Open →</div></div></a>
-<a class="card" href="https://share.google/HjjzBpWegniQOMtfi" target="_blank"><div class="thumb"><img src="pic4.png" onerror="this.parentElement.textContent='pic4.png'"></div><div class="b"><h4>Wallpapers</h4><p>Official dark wallpapers for your lab.</p><div class="go">Open →</div></div></a>
-<a class="card" href="https://youtube.com/@amphiptere-os?si=16IJj6EpKk_xfTzO" target="_blank"><div class="thumb"><img src="pic5.png" onerror="this.parentElement.textContent='pic5.png'"></div><div class="b"><h4>YouTube</h4><p>Demos, installs, tactical builds.</p><div class="go">Watch →</div></div></a>
-<a class="card" href="https://github.com/AmphiptereOS" target="_blank"><div class="thumb"><img src="pic6.png" onerror="this.parentElement.textContent='pic6.png'"></div><div class="b"><h4>Coming Soon</h4><p>More recon and lab tools.</p><div class="go">GitHub →</div></div></a>
+<div class="list">
+<!-- FEATURED WITH PNG - ONLY THESE 2 NEED PNG -->
+<a class="item-featured" href="https://share.google/djTEkTOZ4fux4dw8N" target="_blank">
+<div class="thumb"><img src="pic1.png" alt="OS" onerror="this.parentElement.textContent='pic1.png'"></div>
+<div class="info"><h4 style="color:#fff;font-size:.95rem;margin-bottom:4px">Amphiptere OS — Main Linux</h4><p style="color:#8e8b86;font-size:.82rem;line-height:1.5">Debian 12 XFCE • 2.9GB ISO • Purple Team operators, students, researchers.</p><div class="mono" style="margin-top:10px;font-size:.68rem;color:#b8b5b0">Open Website →</div></div>
+</a>
+
+<a class="item-featured" href="https://share.google/TIwSImI3rpe0krg3T" target="_blank">
+<div class="thumb"><img src="pic3.png" alt="RULER" onerror="this.parentElement.textContent='pic3.png'"></div>
+<div class="info"><h4 style="color:#fff;font-size:.95rem;margin-bottom:4px">RULER — Defense Tool</h4><p style="color:#8e8b86;font-size:.82rem;line-height:1.5">Measure, compare and document security tools for your lab.</p><div class="mono" style="margin-top:10px;font-size:.68rem;color:#b8b5b0">Open RULER →</div></div>
+</a>
+
+<!-- NO PNG NEEDED - TEXT + ICON ONLY -->
+<a class="item" href="https://share.google/utU97sBmhREbGsJBA" target="_blank"><div class="item-icon">⚔️</div><div><h4>Armory</h4><p>Official tools collection</p></div><div class="arrow">→</div></a>
+<a class="item" href="https://share.google/HjjzBpWegniQOMtfi" target="_blank"><div class="item-icon">🎨</div><div><h4>Wallpapers</h4><p>Official dark lab wallpapers</p></div><div class="arrow">→</div></a>
+<a class="item" href="https://youtube.com/@amphiptere-os?si=16IJj6EpKk_xfTzO" target="_blank"><div class="item-icon">▶️</div><div><h4>YouTube</h4><p>Demos and installs</p></div><div class="arrow">→</div></a>
+<a class="item" href="https://github.com/AmphiptereOS" target="_blank"><div class="item-icon">🧪</div><div><h4>Coming Soon</h4><p>More lab tools</p></div><div class="arrow">→</div></a>
 </div>
 </div>
 
-<footer>© 2026 Amphiptere OS (Open Source) • Individual Project • amphiptereos@gmail.com<br>Synthetic data only • Educational • Use at your own responsibility</footer>
+<footer>© 2026 Amphiptere OS (Open Source) • Individual Project • amphiptereos@gmail.com<br>Synthetic data only • Educational • Dark Silver Build</footer>
 </body>
 </html>
